@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions Wash | Premium Auto Detailing & Care</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B0F17',
+                            card: '#131A26',
+                            border: '#232D3F',
+                            gold: '#D4AF37',
+                            goldHover: '#B59227',
+                            cyan: '#00E5FF',
+                            cyanGlow: 'rgba(0, 229, 255, 0.25)',
+                            silver: '#E2E8F0',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Cinzel"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and glassmorphism styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #232D3F;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        .glass-card {
+            background: rgba(19, 26, 38, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-card-cyan {
+            background: rgba(19, 26, 38, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cyan-gradient-text {
+            background: linear-gradient(135deg, #E0F7FA 0%, #00E5FF 60%, #00838F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+
+        .cyan-border-glow {
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.15);
+        }
+
+        /* Image comparison slider styling */
+        .before-after-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .img-after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-dark via-brand-card to-brand-dark border-b border-brand-border py-2 px-4 text-xs md:text-sm text-center font-medium text-slate-300 flex items-center justify-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Open Today in Eersterust, Pretoria! Powered Exclusively by <strong class="text-brand-gold">King Shine Washing Products</strong></span>
+        <a href="#calculator" class="underline text-brand-cyan hover:text-white transition ml-2 font-semibold">Calculate Price &rarr;</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-40 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-gold to-yellow-700 flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-brand-gold/20 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <div>
+                    <span class="font-heading text-xl md:text-2xl font-extrabold tracking-wider text-white block leading-none">CHAMPIONS</span>
+                    <span class="text-[10px] uppercase tracking-[0.25em] text-brand-gold font-bold block mt-1">WASH & DETAILING</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#services" class="hover:text-brand-gold transition-colors">Pricing & Packages</a>
+                <a href="#calculator" class="hover:text-brand-gold transition-colors">Price Calculator</a>
+                <a href="#king-shine" class="hover:text-brand-gold transition-colors">King Shine Tech</a>
+                <a href="#why-us" class="hover:text-brand-gold transition-colors">Why Champions</a>
+                <a href="#gallery" class="hover:text-brand-gold transition-colors">Gallery</a>
+                <a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://wa.me/27714193470?text=Hi%20Champions%20Wash,%20I'd%20like%20to%20enquire%20about%20a%20car%20wash." target="_blank" class="px-5 py-2.5 rounded-xl border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/10 font-medium text-sm flex items-center gap-2 transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>WhatsApp Us</span>
+                </a>
+                <a href="tel:0714193470" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-gold to-yellow-600 hover:from-yellow-500 hover:to-brand-gold text-slate-950 font-bold text-sm shadow-lg shadow-brand-gold/20 hover:shadow-brand-gold/40 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call Now</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="block py-2 text-slate-300 hover:text-brand-gold border-b border-brand-border/40">Pricing & Packages</a>
+            <a href="#calculator" class="block py-2 text-slate-300 hover:text-brand-gold border-b border-brand-border/40">Price Calculator</a>
+            <a href="#king-shine" class="block py-2 text-slate-300 hover:text-brand-gold border-b border-brand-border/40">King Shine Tech</a>
+            <a href="#why-us" class="block py-2 text-slate-300 hover:text-brand-gold border-b border-brand-border/40">Why Champions</a>
+            <a href="#gallery" class="block py-2 text-slate-300 hover:text-brand-gold border-b border-brand-border/40">Gallery</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-brand-gold">Contact</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="tel:0714193470" class="w-full py-3 rounded-xl bg-brand-gold text-slate-950 font-bold text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call Champions Wash</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-16">
+        <!-- Background Overlay & Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1920&q=80" alt="Luxury Car Wash" class="w-full h-full object-cover opacity-25 scale-105 transform hover:scale-100 transition-transform duration-10000" onerror="this.onerror=null; this.src='https://placehold.co/1920x1080/131A26/FFFFFF?text=Champions+Wash';">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-transparent to-brand-dark/80"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- King Shine Badge Callout -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-brand-card/90 border border-brand-gold/40 mb-8 shadow-xl backdrop-blur-md animate-bounce-slow">
+                <div class="w-6 h-6 rounded-full bg-brand-gold text-slate-950 flex items-center justify-center text-xs font-black">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <span class="text-xs sm:text-sm font-semibold tracking-wide uppercase text-slate-200">
+                    Proudly Powered by <span class="gold-gradient-text font-black">King Shine Washing Products</span>
+                </span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-heading text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                THE CHAMPION STANDARD IN <br>
+                <span class="gold-gradient-text">PREMIUM CAR CARE</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-10">
+                Give your vehicle the royalty treatment it deserves in Eersterust. Ultra-glossy finishes, deep scratch-free microfiber cleaning, and precision detailing starting at just <span class="text-white font-bold underline decoration-brand-gold decoration-2">R80</span>.
+            </p>
+
+            <!-- Quick Action Cards / Hero CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
+                <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-gold to-yellow-600 hover:from-yellow-500 hover:to-brand-gold text-slate-950 font-extrabold text-base shadow-xl shadow-brand-gold/25 hover:shadow-brand-gold/40 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-calculator text-lg"></i>
+                    <span>Calculate Your Wash Price</span>
+                </a>
+                <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-white hover:text-brand-gold font-bold text-base hover:border-brand-gold/50 transition-all duration-300 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-list-check text-brand-gold"></i>
+                    <span>View All Packages</span>
+                </a>
+            </div>
+
+            <!-- Quick Price Teasers -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-5 gap-4 max-w-5xl mx-auto text-left">
+                <div class="glass-card p-4 rounded-2xl border-l-4 border-l-brand-gold">
+                    <span class="text-xs uppercase text-slate-400 font-semibold block">Sedans & Hatchbacks</span>
+                    <span class="text-2xl font-black text-white mt-1 block">R80 <span class="text-xs font-normal text-slate-400">/ wash</span></span>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border-l-4 border-l-brand-cyan">
+                    <span class="text-xs uppercase text-slate-400 font-semibold block">SUVs & Bakkies</span>
+                    <span class="text-2xl font-black text-white mt-1 block">R110 <span class="text-xs font-normal text-slate-400">/ wash</span></span>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border-l-4 border-l-amber-500">
+                    <span class="text-xs uppercase text-slate-400 font-semibold block">Engine Bay Detail</span>
+                    <span class="text-2xl font-black text-white mt-1 block">+R50 <span class="text-xs font-normal text-slate-400">extra</span></span>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border-l-4 border-l-purple-500">
+                    <span class="text-xs uppercase text-slate-400 font-semibold block">King Shine Wax</span>
+                    <span class="text-2xl font-black text-white mt-1 block">+R100 <span class="text-xs font-normal text-slate-400">extra</span></span>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border-l-4 border-l-rose-500 col-span-2 md:col-span-1">
+                    <span class="text-xs uppercase text-slate-400 font-semibold block">Brake & Oil Service</span>
+                    <span class="text-2xl font-black text-white mt-1 block">+R250 <span class="text-xs font-normal text-slate-400">extra</span></span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Interactive Price Calculator Section -->
+    <section id="calculator" class="py-20 relative bg-brand-card/40 border-y border-brand-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-brand-cyan">Instant Quote</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mt-2">Interactive Price Calculator</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Select your vehicle type and optional add-ons or mechanical services for an accurate estimate on the spot.</p>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Calculator Form Controls -->
+                    <div class="md:col-span-7 space-y-6">
+                        
+                        <!-- Step 1: Vehicle Selection -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-300 mb-3">1. Select Vehicle Type</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button type="button" onclick="selectVehicle('sedan', 80)" id="btn-sedan" class="calc-veh-btn p-4 rounded-2xl border-2 border-brand-gold bg-brand-gold/10 text-left transition-all relative">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <i class="fa-solid fa-car text-2xl text-brand-gold"></i>
+                                        <span class="text-xs font-bold uppercase bg-brand-gold text-slate-950 px-2 py-0.5 rounded">R80</span>
+                                    </div>
+                                    <div class="font-bold text-white">Sedan / Hatch</div>
+                                    <div class="text-xs text-slate-400 mt-1">Compact & standard passenger cars</div>
+                                </button>
+
+                                <button type="button" onclick="selectVehicle('suv', 110)" id="btn-suv" class="calc-veh-btn p-4 rounded-2xl border-2 border-brand-border bg-brand-card text-left transition-all hover:border-brand-border/80">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <i class="fa-solid fa-truck-pickup text-2xl text-slate-400"></i>
+                                        <span class="text-xs font-bold uppercase bg-slate-800 text-slate-300 px-2 py-0.5 rounded">R110</span>
+                                    </div>
+                                    <div class="font-bold text-white">SUV / Bakkie</div>
+                                    <div class="text-xs text-slate-400 mt-1">4x4s, double cabs, & large crossovers</div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Add-ons -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-300 mb-3">2. Optional Detailing & Mechanical Add-ons</label>
+                            
+                            <!-- Engine Bay Toggle -->
+                            <label class="flex items-center justify-between p-4 rounded-2xl border border-brand-border bg-brand-card/70 cursor-pointer hover:border-amber-500/50 transition mb-3">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" id="calc-engine" onchange="calculateTotal()" class="w-5 h-5 rounded accent-brand-gold cursor-pointer">
+                                    <div>
+                                        <span class="font-bold text-white block">Engine Bay Clean & Shine</span>
+                                        <span class="text-xs text-slate-400">Degreasing, electrical protection, & thermal polish</span>
+                                    </div>
+                                </div>
+                                <span class="font-bold text-amber-400 text-sm">+R50</span>
+                            </label>
+
+                            <!-- King Shine Wax Protection -->
+                            <label class="flex items-center justify-between p-4 rounded-2xl border border-brand-border bg-brand-card/70 cursor-pointer hover:border-brand-cyan/50 transition mb-3">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" id="calc-wax" onchange="calculateTotal()" class="w-5 h-5 rounded accent-brand-cyan cursor-pointer">
+                                    <div>
+                                        <span class="font-bold text-white flex items-center gap-2">
+                                            King Shine Nano Wax Coating
+                                            <span class="text-[10px] uppercase bg-brand-gold/20 text-brand-gold font-bold px-2 py-0.5 rounded-full">Premium Protect</span>
+                                        </span>
+                                        <span class="text-xs text-slate-400">High-gloss shine, scratch barrier & hydrophobic water beading</span>
+                                    </div>
+                                </div>
+                                <span class="font-bold text-purple-400 text-sm">+R100</span>
+                            </label>
+
+                            <!-- Brake Service & Oil Change -->
+                            <label class="flex items-center justify-between p-4 rounded-2xl border border-brand-border bg-brand-card/70 cursor-pointer hover:border-rose-500/50 transition">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" id="calc-brake-oil" onchange="calculateTotal()" class="w-5 h-5 rounded accent-rose-500 cursor-pointer">
+                                    <div>
+                                        <span class="font-bold text-white flex items-center gap-2">
+                                            Brake Service & Oil Change
+                                            <span class="text-[10px] uppercase bg-rose-500/20 text-rose-400 font-bold px-2 py-0.5 rounded-full">Mechanical</span>
+                                        </span>
+                                        <span class="text-xs text-slate-400">Full brake check/service & quick precision engine oil change</span>
+                                    </div>
+                                </div>
+                                <span class="font-bold text-rose-400 text-sm">+R250</span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                    <!-- Calculator Summary Display -->
+                    <div class="md:col-span-5 bg-gradient-to-b from-brand-card to-slate-900 border border-brand-border rounded-2xl p-6 flex flex-col justify-between shadow-inner">
+                        <div>
+                            <div class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-4 border-b border-brand-border pb-2 flex justify-between items-center">
+                                <span>Estimated Summary</span>
+                                <span class="text-brand-gold text-xs font-semibold">Champions Wash</span>
+                            </div>
+
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between text-slate-300">
+                                    <span id="summary-vehicle-name">Sedan & Hatchback Wash</span>
+                                    <span class="font-medium text-white" id="summary-vehicle-price">R80</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300 hidden" id="summary-engine-row">
+                                    <span>Engine Bay Detailing</span>
+                                    <span class="font-medium text-amber-400">+R50</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300 hidden" id="summary-wax-row">
+                                    <span>King Shine Wax Coating</span>
+                                    <span class="font-medium text-purple-400">+R100</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300 hidden" id="summary-brake-oil-row">
+                                    <span>Brake Service & Oil Change</span>
+                                    <span class="font-medium text-rose-400">+R250</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-4 border-t border-brand-border">
+                            <div class="flex justify-between items-baseline mb-6">
+                                <span class="text-slate-400 text-sm font-semibold">Total Price:</span>
+                                <span class="text-4xl font-black text-white tracking-tight" id="calc-total-price">R80</span>
+                            </div>
+
+                            <a href="https://wa.me/27714193470?text=Hi%20Champions%20Wash,%20I'd%20like%20to%20get%20a%20wash%20and%20service%20in%20Eersterust." target="_blank" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-extrabold text-sm shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Enquire via WhatsApp</span>
+                            </a>
+                            <p class="text-[11px] text-center text-slate-500 mt-2">Pay on arrival at Eersterust branch • Cash & Cards accepted</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Service Packages Section -->
+    <section id="services" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-gold">Transparent Rates</span>
+            <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white mt-2">Our Wash & Maintenance Packages</h2>
+            <p class="text-slate-400 mt-3 text-base">All washes feature King Shine specialized products to guarantee a swirl-free finish, alongside precision mechanical maintenance services.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            
+            <!-- Package 1: Sedans & Hatchbacks -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between hover:border-brand-gold/60 transition-all duration-300 group hover:-translate-y-2">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-gold">Standard Wash</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Sedans & Hatchbacks</h3>
+                        </div>
+                        <div class="w-10 h-10 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-white">R80</span>
+                        <span class="text-slate-400 text-xs"> / per car</span>
+                    </div>
+
+                    <ul class="space-y-3 text-xs text-slate-300 mb-8 border-t border-brand-border/60 pt-6">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-gold"></i>
+                            <span>High-Pressure Foam Pre-Wash</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-gold"></i>
+                            <span>Microfiber Scratch-Free Hand Wash</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-gold"></i>
+                            <span>Complete Interior & Boot Vacuum</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-gold"></i>
+                            <span>Dashboard & Console Polish</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-gold"></i>
+                            <span>King Shine High-Gloss Tire Shine</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="tel:0714193470" class="w-full py-2.5 rounded-xl border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-slate-950 font-bold transition-all text-xs text-center block">
+                    Call to Order
+                </a>
+            </div>
+
+            <!-- Package 2: SUVs & Bakkies -->
+            <div class="glass-card-cyan rounded-3xl p-6 flex flex-col justify-between relative shadow-2xl cyan-border-glow border-2 border-brand-cyan/50">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-cyan to-blue-600 text-slate-950 font-extrabold text-[10px] uppercase px-3 py-1 rounded-full shadow-lg">
+                    Most Popular
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-start mb-6 mt-2">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-cyan">Heavy Duty</span>
+                            <h3 class="text-xl font-bold text-white mt-1">SUVs & Bakkies</h3>
+                        </div>
+                        <div class="w-10 h-10 rounded-2xl bg-brand-cyan/20 border border-brand-cyan/40 flex items-center justify-center text-brand-cyan text-lg">
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-white">R110</span>
+                        <span class="text-slate-400 text-xs"> / per vehicle</span>
+                    </div>
+
+                    <ul class="space-y-3 text-xs text-slate-200 mb-8 border-t border-brand-border/60 pt-6">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-cyan"></i>
+                            <span>Includes ALL Sedan Package Features</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-cyan"></i>
+                            <span>Heavy Mud & Road Grime Wash</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-cyan"></i>
+                            <span>Wheel Arch & Rim Cleansing</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-cyan"></i>
+                            <span>Deep Interior Vacuum & Wipe</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-cyan"></i>
+                            <span>Bakkie Bed / Boot Flush</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="tel:0714193470" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-600 hover:from-cyan-400 hover:to-brand-cyan text-slate-950 font-extrabold transition-all text-xs text-center shadow-lg shadow-brand-cyan/20 block">
+                    Call to Order
+                </a>
+            </div>
+
+            <!-- Add-On Package 1: Engine Bay Detail -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between hover:border-amber-500/60 transition-all duration-300 group hover:-translate-y-2">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Specialist Extra</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Engine Bay Detail</h3>
+                        </div>
+                        <div class="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-white">+R50</span>
+                        <span class="text-slate-400 text-xs"> / extra</span>
+                    </div>
+
+                    <ul class="space-y-3 text-xs text-slate-300 mb-8 border-t border-brand-border/60 pt-6">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-amber-400"></i>
+                            <span>Heavy-Duty Degreaser Treatment</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-amber-400"></i>
+                            <span>Electrical Component Masking</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-amber-400"></i>
+                            <span>Hose & Plastic Dressing</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-amber-400"></i>
+                            <span>Removes Oil, Grime & Dirt</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="tel:0714193470" class="w-full py-2.5 rounded-xl border border-amber-500/80 text-amber-400 hover:bg-amber-500 hover:text-slate-950 font-bold transition-all text-xs text-center block">
+                    Add Engine Clean
+                </a>
+            </div>
+
+            <!-- Add-On Package 2: King Shine Wax Coating -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 group hover:-translate-y-2">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Gloss & Protection</span>
+                            <h3 class="text-xl font-bold text-white mt-1">King Shine Wax</h3>
+                        </div>
+                        <div class="w-10 h-10 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-white">+R100</span>
+                        <span class="text-slate-400 text-xs"> / extra</span>
+                    </div>
+
+                    <ul class="space-y-3 text-xs text-slate-300 mb-8 border-t border-brand-border/60 pt-6">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-purple-400"></i>
+                            <span>King Shine Premium Hydrophobic Wax</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-purple-400"></i>
+                            <span>Ultra High-Gloss Paint Sealant</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-purple-400"></i>
+                            <span>Long-Lasting UV & Water Repellent</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-purple-400"></i>
+                            <span>Deep Swirl-Free Reflection</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="tel:0714193470" class="w-full py-2.5 rounded-xl border border-purple-500/80 text-purple-400 hover:bg-purple-500 hover:text-slate-950 font-bold transition-all text-xs text-center block">
+                    Add Wax Coating
+                </a>
+            </div>
+
+            <!-- New Mechanical Service: Brake Service & Oil Change -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between hover:border-rose-500/60 transition-all duration-300 group hover:-translate-y-2">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-rose-400">Mechanical Care</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Brake & Oil Service</h3>
+                        </div>
+                        <div class="w-10 h-10 rounded-2xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 text-lg group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-white">+R250</span>
+                        <span class="text-slate-400 text-xs"> / service</span>
+                    </div>
+
+                    <ul class="space-y-3 text-xs text-slate-300 mb-8 border-t border-brand-border/60 pt-6">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-rose-400"></i>
+                            <span>Engine Oil Replacement & Refill</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-rose-400"></i>
+                            <span>Brake Pad Inspection & Servicing</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-rose-400"></i>
+                            <span>Brake Fluid & Lines Check</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-rose-400"></i>
+                            <span>Engine Bay Safety Inspection</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="tel:0714193470" class="w-full py-2.5 rounded-xl border border-rose-500/80 text-rose-400 hover:bg-rose-500 hover:text-slate-950 font-bold transition-all text-xs text-center block">
+                    Add Brake & Oil Service
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- King Shine Showcase Section -->
+    <section id="king-shine" class="py-20 bg-gradient-to-b from-brand-card to-brand-dark border-y border-brand-border/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold text-xs font-bold uppercase tracking-widest">
+                        <i class="fa-solid fa-star"></i> Formula Excellence
+                    </div>
+                    
+                    <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white leading-tight">
+                        Why We Exclusively Use <br>
+                        <span class="gold-gradient-text">King Shine Washing Products</span>
+                    </h2>
+
+                    <p class="text-slate-300 leading-relaxed">
+                        At Champions Wash in Eersterust, we don't settle for cheap household detergents that strip paint clear-coats or leave swirl marks. We partner with **King Shine**, South Africa's premier automotive chemical specialists.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-2xl bg-brand-dark/80 border border-brand-border">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold mb-3">
+                                <i class="fa-solid fa-droplet text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-white mb-1">pH Neutral Formulas</h4>
+                            <p class="text-xs text-slate-400">Safe on all ceramics, waxes, wraps, and custom paint coats.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-brand-dark/80 border border-brand-border">
+                            <div class="w-10 h-10 rounded-xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center font-bold mb-3">
+                                <i class="fa-solid fa-shield-cat text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-white mb-1">Hydrophobic Shield</h4>
+                            <p class="text-xs text-slate-400">Repels rainwater and road grime for weeks after your wash.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-brand-dark/80 border border-brand-border">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold mb-3">
+                                <i class="fa-solid fa-leaf text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-white mb-1">Eco-Friendly & Safe</h4>
+                            <p class="text-xs text-slate-400">100% biodegradable active agents that protect the environment.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-brand-dark/80 border border-brand-border">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold mb-3">
+                                <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-white mb-1">High Gloss Finish</h4>
+                            <p class="text-xs text-slate-400">Delivers a deep reflection and showroom shine with King Shine Wax (+R100).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Showcase Visual Card -->
+                <div class="lg:col-span-6 relative">
+                    <div class="glass-card p-8 rounded-3xl border border-brand-gold/30 shadow-2xl relative overflow-hidden text-center">
+                        <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+                        
+                        <div class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-tr from-brand-gold to-yellow-300 flex items-center justify-center text-slate-950 text-4xl font-black shadow-xl mb-6">
+                            <i class="fa-solid fa-bottle-droplet"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white mb-2">King Shine Professional Line</h3>
+                        <p class="text-slate-400 text-sm max-w-md mx-auto mb-6">Ultra Foaming Shampoo • High Gloss Wax • Non-Acidic Rim Cleaner • Interior Leather Preserve</p>
+
+                        <div class="p-4 rounded-2xl bg-brand-dark/90 border border-brand-border flex items-center justify-around text-center">
+                            <div>
+                                <span class="block text-2xl font-black text-brand-gold">100%</span>
+                                <span class="text-[11px] text-slate-400 uppercase tracking-wider">Scratch Free</span>
+                            </div>
+                            <div class="h-8 w-px bg-brand-border"></div>
+                            <div>
+                                <span class="block text-2xl font-black text-brand-cyan">3x</span>
+                                <span class="text-[11px] text-slate-400 uppercase tracking-wider">Longer Shine</span>
+                            </div>
+                            <div class="h-8 w-px bg-brand-border"></div>
+                            <div>
+                                <span class="block text-2xl font-black text-emerald-400">UV</span>
+                                <span class="text-[11px] text-slate-400 uppercase tracking-wider">Protection</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Champions Wash Section -->
+    <section id="why-us" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-brand-cyan">The Champions Advantage</span>
+            <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white mt-2">Why Car Enthusiasts Choose Us</h2>
+            <p class="text-slate-400 mt-3 text-base">We combine professional detailing technology with ultimate convenience in Eersterust.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="glass-card p-6 rounded-2xl border border-brand-border hover:border-brand-gold/40 transition duration-300">
+                <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl mb-4 font-bold">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">VIP Waiting Lounge</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Relax in comfort while our expert wash crew gives your vehicle the attention it deserves.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-brand-border hover:border-brand-gold/40 transition duration-300">
+                <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 text-brand-cyan flex items-center justify-center text-xl mb-4 font-bold">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Certified Detailers</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Our wash crew is trained in high-end vehicle handling, ensuring careful treatment of sensitive components.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-brand-border hover:border-brand-gold/40 transition duration-300">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4 font-bold">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Swift Express Lanes</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Efficient multi-stage cleaning process ensures you get a thorough wash with zero delays.</p>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-brand-border hover:border-brand-gold/40 transition duration-300">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4 font-bold">
+                    <i class="fa-solid fa-hand-sparkles"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Microfiber Tech</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">100% ultra-soft plush microfiber cloths used to prevent swirl marks and paint scratches.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Before & After Comparison Section -->
+    <section id="gallery" class="py-20 bg-brand-card/30 border-y border-brand-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-brand-gold">Real Results</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mt-2">See The Champions Shine</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Drag the slider to see the transformation powered by King Shine products.</p>
+            </div>
+
+            <!-- Interactive Before/After Card -->
+            <div class="max-w-3xl mx-auto glass-card rounded-3xl overflow-hidden p-2 shadow-2xl">
+                <div id="before-after" class="before-after-container aspect-[16/9] rounded-2xl select-none cursor-ew-resize">
+                    <!-- Before Image (Dirty/Dusty Car) -->
+                    <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" alt="Before Wash" onerror="this.onerror=null; this.src='https://placehold.co/1200x675/333333/FFFFFF?text=Before+Wash';">
+                    
+                    <!-- After Image (Clean Glossy Car) -->
+                    <div id="after-img-wrap" class="img-after border-r-4 border-brand-gold">
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80" class="absolute top-0 left-0 w-full h-full object-cover max-w-none" id="after-img" alt="After Champions Wash" onerror="this.onerror=null; this.src='https://placehold.co/1200x675/D4AF37/000000?text=King+Shine+Result';">
+                        <span class="absolute top-4 left-4 bg-brand-cyan text-slate-950 font-extrabold text-xs px-3 py-1 rounded-full shadow">AFTER KING SHINE</span>
+                    </div>
+
+                    <span class="absolute top-4 right-4 bg-slate-900/90 text-slate-300 font-bold text-xs px-3 py-1 rounded-full border border-slate-700">BEFORE</span>
+                    
+                    <!-- Drag Slider Handle -->
+                    <div id="slider-handle" class="absolute top-0 bottom-0 left-1/2 -ml-3 w-6 flex items-center justify-center pointer-events-none">
+                        <div class="w-7 h-12 rounded-full bg-brand-gold text-slate-950 flex items-center justify-center shadow-2xl text-xs font-black">
+                            <i class="fa-solid fa-arrows-left-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-xs text-slate-500 mt-4">Move your mouse or finger over the image to compare before and after wash.</p>
+        </div>
+    </section>
+
+    <!-- Location, Hours & Contact Section -->
+    <section id="contact" class="py-20 bg-brand-card/60 border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Hours & Location Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-gold">Visit Champions Wash</span>
+                        <h2 class="font-heading text-3xl font-bold text-white mt-2">Location, Hours & Team</h2>
+                        <p class="text-slate-400 text-sm mt-2">Drive in anytime during operating hours or contact our team directly.</p>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-dark border border-brand-border">
+                            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white block">Eersterust Branch</span>
+                                <span class="text-xs text-slate-300">341 Spitfire Avenue, Eersterust, Pretoria, Gauteng</span>
+                            </div>
+                        </div>
+
+                        <!-- Operating Hours -->
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-dark border border-brand-border">
+                            <div class="w-10 h-10 rounded-xl bg-brand-cyan/10 text-brand-cyan flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white block">Operating Hours</span>
+                                <span class="text-xs text-slate-300 block">Monday to Saturday: <strong>08:00 AM – 19:30 PM</strong></span>
+                                <span class="text-xs text-slate-300 block">Sundays & Public Holidays: <strong>08:00 AM – 17:00 PM</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Contact Numbers -->
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-dark border border-brand-border">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div class="space-y-2 w-full">
+                                <span class="font-bold text-white block">Direct Contact & WhatsApp</span>
+                                
+                                <div class="flex items-center justify-between text-xs border-b border-brand-border/40 pb-1.5">
+                                    <span class="font-semibold text-slate-200">Sherniel:</span>
+                                    <div class="flex items-center gap-3">
+                                        <a href="tel:0714193470" class="text-brand-gold hover:underline font-mono">071 419 3470</a>
+                                        <a href="https://wa.me/27714193470" target="_blank" class="text-emerald-400 hover:text-emerald-300"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between text-xs border-b border-brand-border/40 pb-1.5">
+                                    <span class="font-semibold text-slate-200">Malo:</span>
+                                    <div class="flex items-center gap-3">
+                                        <a href="tel:0632281034" class="text-brand-gold hover:underline font-mono">063 228 1034</a>
+                                        <a href="https://wa.me/27632281034" target="_blank" class="text-emerald-400 hover:text-emerald-300"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between text-xs pt-0.5">
+                                    <span class="font-semibold text-slate-200">Leighren:</span>
+                                    <div class="flex items-center gap-3">
+                                        <a href="tel:0718845795" class="text-brand-gold hover:underline font-mono">071 884 5795</a>
+                                        <a href="https://wa.me/27718845795" target="_blank" class="text-emerald-400 hover:text-emerald-300"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Location -->
+                <div class="lg:col-span-7 glass-card rounded-3xl overflow-hidden p-3 border border-brand-border flex flex-col justify-between min-h-[350px]">
+                    <div class="w-full h-full min-h-[320px] rounded-2xl bg-slate-900 relative flex items-center justify-center overflow-hidden">
+                        <iframe 
+                            class="w-full h-full min-h-[320px] rounded-2xl border-0 opacity-85 hover:opacity-100 transition-opacity" 
+                            src="https://maps.google.com/maps?q=341%20Spitfire%20Avenue%20Eersterust%20Pretoria&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-brand-border py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-gold flex items-center justify-center text-slate-950 font-bold text-sm">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <span class="font-heading font-extrabold text-white tracking-wider">CHAMPIONS WASH</span>
+            </div>
+
+            <p class="text-xs text-slate-500">
+                &copy; <script>document.write(new Date().getFullYear())</script> Champions Wash. 341 Spitfire Ave, Eersterust. Powered by <strong class="text-slate-300">King Shine Products</strong>.
+            </p>
+
+            <div class="flex gap-4 text-slate-400 text-lg">
+                <a href="https://wa.me/27714193470" target="_blank" class="hover:text-emerald-400 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:0714193470" class="hover:text-brand-gold transition"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        // State variables for price calculator
+        let currentVehicleType = 'sedan';
+        let currentBasePrice = 80;
+
+        function selectVehicle(type, basePrice) {
+            currentVehicleType = type;
+            currentBasePrice = basePrice;
+
+            const sedanBtn = document.getElementById('btn-sedan');
+            const suvBtn = document.getElementById('btn-suv');
+
+            if (type === 'sedan') {
+                sedanBtn.className = 'calc-veh-btn p-4 rounded-2xl border-2 border-brand-gold bg-brand-gold/10 text-left transition-all relative';
+                suvBtn.className = 'calc-veh-btn p-4 rounded-2xl border-2 border-brand-border bg-brand-card text-left transition-all hover:border-brand-border/80';
+                
+                sedanBtn.querySelector('i').className = 'fa-solid fa-car text-2xl text-brand-gold';
+                suvBtn.querySelector('i').className = 'fa-solid fa-truck-pickup text-2xl text-slate-400';
+                
+                document.getElementById('summary-vehicle-name').innerText = 'Sedan & Hatchback Wash';
+                document.getElementById('summary-vehicle-price').innerText = 'R80';
+            } else {
+                suvBtn.className = 'calc-veh-btn p-4 rounded-2xl border-2 border-brand-cyan bg-brand-cyan/10 text-left transition-all relative';
+                sedanBtn.className = 'calc-veh-btn p-4 rounded-2xl border-2 border-brand-border bg-brand-card text-left transition-all hover:border-brand-border/80';
+                
+                suvBtn.querySelector('i').className = 'fa-solid fa-truck-monster text-2xl text-brand-cyan';
+                sedanBtn.querySelector('i').className = 'fa-solid fa-car text-2xl text-slate-400';
+
+                document.getElementById('summary-vehicle-name').innerText = 'SUV & Bakkie Wash';
+                document.getElementById('summary-vehicle-price').innerText = 'R110';
+            }
+
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            let total = currentBasePrice;
+            const engineChecked = document.getElementById('calc-engine').checked;
+            const waxChecked = document.getElementById('calc-wax').checked;
+            const brakeOilChecked = document.getElementById('calc-brake-oil').checked;
+            
+            const engineRow = document.getElementById('summary-engine-row');
+            const waxRow = document.getElementById('summary-wax-row');
+            const brakeOilRow = document.getElementById('summary-brake-oil-row');
+
+            if (engineChecked) {
+                total += 50;
+                engineRow.classList.remove('hidden');
+            } else {
+                engineRow.classList.add('hidden');
+            }
+
+            if (waxChecked) {
+                total += 100;
+                waxRow.classList.remove('hidden');
+            } else {
+                waxRow.classList.add('hidden');
+            }
+
+            if (brakeOilChecked) {
+                total += 250;
+                brakeOilRow.classList.remove('hidden');
+            } else {
+                brakeOilRow.classList.add('hidden');
+            }
+
+            document.getElementById('calc-total-price').innerText = `R${total}`;
+        }
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Before & After Interactive Slider Script
+        const sliderContainer = document.getElementById('before-after');
+        const afterWrap = document.getElementById('after-img-wrap');
+        const afterImg = document.getElementById('after-img');
+        const sliderHandle = document.getElementById('slider-handle');
+
+        if (sliderContainer) {
+            function updateSlider(x) {
+                const rect = sliderContainer.getBoundingClientRect();
+                let position = ((x - rect.left) / rect.width) * 100;
+                if (position < 0) position = 0;
+                if (position > 100) position = 100;
+
+                afterWrap.style.width = `${position}%`;
+                sliderHandle.style.left = `${position}%`;
+                afterImg.style.width = `${rect.width}px`;
+            }
+
+            let isDragging = false;
+
+            sliderContainer.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                updateSlider(e.clientX);
+            });
+
+            window.addEventListener('mouseup', () => isDragging = false);
+
+            sliderContainer.addEventListener('mousemove', (e) => {
+                if (isDragging) updateSlider(e.clientX);
+            });
+
+            // Touch events for mobile support
+            sliderContainer.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                updateSlider(e.touches[0].clientX);
+            });
+
+            window.addEventListener('touchend', () => isDragging = false);
+
+            sliderContainer.addEventListener('touchmove', (e) => {
+                if (isDragging) updateSlider(e.touches[0].clientX);
+            });
+
+            // Window resize handler to keep slider width crisp
+            window.addEventListener('resize', () => {
+                const rect = sliderContainer.getBoundingClientRect();
+                afterImg.style.width = `${rect.width}px`;
+            });
+        }
+    </script>
+</body>
+</html>
